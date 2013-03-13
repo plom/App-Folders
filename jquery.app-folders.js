@@ -40,6 +40,14 @@
 	var folderContent = $('.folderContent.' + openFolder);
 	var folderContentShown = $(folderContent).css("display") != "none";
 	var clickedFolder = $(this);
+
+
+        //auto scroll to the folder being clicked
+	if( settings.marginTopAdjust == false) {
+          $('html, body').animate({
+            scrollTop: $(this).offset().top
+          }, settings.animationSpeed);
+        }
 	
 	
 	//If there is no currently displayed content area...
